@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+import os 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -55,7 +56,7 @@ ROOT_URLCONF = 'hospital_management_system.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -87,19 +88,17 @@ WSGI_APPLICATION = 'hospital_management_system.wsgi.application'
 
 # we can see this information in databse -> properties and fill from there  .
 
+# added by - Aditya Bharat
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME' : 'my_sem_project_db',               #database name
-        'USER' : 'postgres',                        #owner name
-        'PASSWORD' : 'root',                        
-        'HOST' : 'localhost',                       
-        'PORT' : '5432'
-
+        'NAME': 'hospital_management_project',
+        'USER': 'postgres',
+        'PASSWORD': 'root',
+        'HOST':'localhost',
+        'PORT':'5432',
     }
 }
-
-
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
@@ -135,6 +134,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = 'static/'
+
+STATIC_DIRS = [
+    os.path.join(BASE_DIR ,"static")
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
