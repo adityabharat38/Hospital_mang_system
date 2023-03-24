@@ -17,4 +17,6 @@ from django.contrib import admin
 from django.urls import path,include
 from . import views
 urlpatterns = [
+    path('front_page',views.front_page,name='front'),
+    path('book_appointment',views.book_appointment,name='book_appointment'),
 ]
