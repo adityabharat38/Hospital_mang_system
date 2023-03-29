@@ -3,7 +3,9 @@ from datetime import datetime
 from hospital_app.models import appointment
 from django.contrib import messages
 from django.utils import timezone
+from pathlib import Path
 import datetime
+import time
 # Create your views here.
 
 
@@ -34,19 +36,34 @@ def book_appointment(request):
         email = request.POST.get('email')
         phonenumber = request.POST.get('phonenumber')
         doctor = request.POST.get('doctor')
-        date = timezone.now() # get current date 
-        time = datetime
-        # appointment.objects.create(created_at=current_datetime)
-        # date = request.POST.get('date')
-        # time = request.POST.get('time')
+        date = timezone.now()           # get current date 
+        new_time = timezone.now()       # get current time
+
+        # here i named the variable new_time to demonstarte that we can choose independent names here ,but when
+        # we pass them on object for model class , we are now giving their value to model class variables that are
+        # representing the database (rows and coloums)
+
         obj = appointment(name=name, age=age,gender=gender,email=email,
-                          phonenumber=phonenumber,doctor=doctor,date=date )
-        print("adityaaaaaaaaaaaaaaaaaaaaaaa")
-        obj.save()      # used to save the form data in database
-        # messages.success(request,'done sumbitting')
-        # print("helooooooooooooooooooo")
+                          phonenumber=phonenumber,doctor=doctor,date=date,time=new_time)
+        
+        print("req completed succesfully")
+
+        check = obj.save()      # used to save the form data in database
+
+        print(check)    # it is none see reason below
+        # When you call obj.save(), the object is saved to the database, and its primary key (pk) is assigned. 
+        # However, the save() method does not return the object instance. Instead, it returns None by default, 
+        # indicating that the object was saved successfully.
+        try:
+            if obj.pk:
+                print("data stored in databse sucessfully")
+
+        except Exception as e :
+            print(e)
+
         messages.success(request, 'form submitted succesfully')
-        return render(request, 'book_appointment.html', {'messages': messages.get_messages(request)})
+        # return render(request, 'book_appointment.html', {'messages': messages.get_messages(request)})
         # messages.info(request,'form submitted succesfully')     #returns a response to the user using messages.info() method.
         # print(messages.get_messages(messages))
+        return redirect(request.path)
     return render(request, 'book_appointment.html')

@@ -1,3 +1,25 @@
+
+{% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+<script>
+    // Reload the page after a 3 second delay
+    {% if messages %} 
+        
+        var message = "{{ messages.0|escapejs }}";
+        alert(message);
+            
+         // Reload the page after the user clicks "OK"
+         window.location.reload();
+    {% endif %}
+
+</script>
+
 <div class="formbold-main-wrapper">
     <!-- Author: FormBold Team -->
     <!-- Learn More: https://formbold.com -->
