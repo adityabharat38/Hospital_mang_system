@@ -1,3 +1,21 @@
+
 from django.db import models
 
 # Create your models here.
+class appointment(models.Model):
+    name        = models.CharField(max_length=100)
+    age         = models.CharField(max_length=50)
+    gender      = models.CharField(max_length=100)
+    email       = models.EmailField(max_length=254)
+    phonenumber = models.IntegerField()
+    doctor      = models.CharField(max_length=100)
+    date        = models.DateField(auto_now_add=True)
+    time        = models.TimeField()
+    def __str__(self):
+        return self.name
+    
+
+            # {% comment %} age         = models.CharField(max_length=50)
+            # gender      = models.CharField(max_length=100)
+            # email       = models.EmailField(max_length=254)
+            # doctor  {% endcomment %} 

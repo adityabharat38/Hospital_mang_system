@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path,include
 from . import views
 urlpatterns = [
-    path('front_page',views.front_page,name='front'),
+    path('',views.home_page,name='front'),
     path('book_appointment',views.book_appointment,name='book_appointment'),
+    path('specialities',views.specialties,name='services'),
+    path('doctors',views.doctors,name='doctors'),
+    path('contact_us',views.contact_us,name='contact details'),
+    path('about_us',views.about_us,name='about')
 ]

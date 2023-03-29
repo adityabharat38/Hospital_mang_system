@@ -1,55 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Hospital Information</title>
+  <title> Hospital Management System </title> 
+<style>
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left ;
+  border-right:1px solid #bbb;
+}
+
+li:last-child {
+  border-right:1px none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+</style>
 </head>
 <body>
-    <header>
-        <h1>Welcome to XYZ Hospital</h1>
-        <nav>
-            <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="#">Doctors</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>About Us</h2>
-            <p>XYZ Hospital is a leading provider of healthcare services in the region. We are committed to providing high-quality care to our patients and improving their health outcomes.</p>
-        </section>
-        <section>
-            <h2>Our Services</h2>
-            <ul>
-                <li>Emergency Services</li>
-                <li>Inpatient Care</li>
-                <li>Outpatient Care</li>
-                <li>Diagnostic Services</li>
-                <li>Specialty Clinics</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Our Doctors</h2>
-            <ul>
-                <li>Dr. John Doe - Cardiologist</li>
-                <li>Dr. Jane Smith - Neurologist</li>
-                <li>Dr. David Lee - Oncologist</li>
-            </ul>
-        </section>
-        <section>
-            <h2>Contact Us</h2>
-            <p>XYZ Hospital<br>
-            123 Main Street<br>
-            Anytown, USA 12345<br>
-            Phone: 555-555-5555<br>
-            Email: info@xyzhospital.com</p>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; XYZ Hospital. All rights reserved.</p>
-    </footer>
+
+{% load static %}
+
+<ul>
+  <li><a class="active">Home</a></li>
+  <li><a href="specialities">Specialities</a></li>
+  <li><a href="doctors">Doctors</a></li>
+  <li><a href="book_appointment">Book your Appointment</a></li>
+  <li><a href="contact_us">Contact us</a></li>
+  <li style="float:right"><a href="about_us">About us</a></li>
+</ul> 
+
+<img src="{% static 'front_picture.jpg' %}" alt="front page" width="1527" height="647"> 
+
 </body>
 </html>

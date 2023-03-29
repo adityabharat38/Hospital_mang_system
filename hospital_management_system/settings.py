@@ -12,9 +12,15 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 
 from pathlib import Path
 import os 
+#for using alerts -> such as using some alerts for form submisison ->eg form has been succesfully submitted
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+#adding temeprarerly 29-march-2023
+# TEMPLATES_DIR = os.path.join(BASE_DIR,'templates')
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -49,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.messages.middleware.MessageMiddleware',
 ]
 
 ROOT_URLCONF = 'hospital_management_system.urls'
@@ -57,6 +65,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR,'templates')],
+        # 'DIRS' : [TEMPLATES_DIR],           # TEMP CHANGED ON 29 MARCH
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -136,7 +145,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 
 STATIC_DIRS = [
-    os.path.join(BASE_DIR ,"static")
+    os.path.join(BASE_DIR,"static")
 ]
 
 # Default primary key field type
