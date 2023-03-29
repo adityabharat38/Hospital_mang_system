@@ -5,15 +5,15 @@
             <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
         {% endfor %}
     </ul>
-{% endif %}
+{% endif %} 
 
 <script>
     // Reload the page after a 3 second delay
     {% if messages %} 
         
         var message = "{{ messages.0|escapejs }}";
-        alert(message);
-            
+        alert(var message);
+        window.location.reload();    
          // Reload the page after the user clicks "OK"
          window.location.reload();
     {% endif %}
