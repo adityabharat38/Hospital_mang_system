@@ -36,16 +36,14 @@ def book_appointment(request):
         email = request.POST.get('email')
         phonenumber = request.POST.get('phonenumber')
         doctor = request.POST.get('doctor')
-        date = timezone.now()           # get current date 
-        new_time = timezone.now()       # get current time
+        curent_datetime = datetime.datetime.now()
 
         # here i named the variable new_time to demonstarte that we can choose independent names here ,but when
         # we pass them on object for model class , we are now giving their value to model class variables that are
         # representing the database (rows and coloums)
 
         obj = appointment(name=name, age=age,gender=gender,email=email,
-                          phonenumber=phonenumber,doctor=doctor,date=date,time=new_time)
-        
+                          phonenumber=phonenumber,doctor=doctor,datetime = curent_datetime)
         print("req completed succesfully")
 
         check = obj.save()      # used to save the form data in database
