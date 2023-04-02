@@ -9,11 +9,12 @@ class appointment(models.Model):
     email       = models.EmailField(max_length=254)
     phonenumber = models.IntegerField()
     doctor      = models.CharField(max_length=100)
-    date        = models.DateField(auto_now_add=True)
-    time        = models.TimeField(null=True,blank=True)
+    datetime = models.DateTimeField(null=True,blank=True)
+    # date        = models.DateField(auto_now_add=True)
+    # time        = models.TimeField(null=True,blank=True)
     
-    def __str__(self):
-        return self.name
+    # def __str__(self):
+    #     return self.name
     
 
             # {% comment %} age         = models.CharField(max_length=50)
