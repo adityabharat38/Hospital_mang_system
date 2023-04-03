@@ -7,7 +7,7 @@ class appointment(models.Model):
     age         = models.CharField(max_length=50)
     gender      = models.CharField(max_length=100)
     email       = models.EmailField(max_length=254)
-    phonenumber = models.IntegerField()
+    phonenumber = models.CharField(max_length=120)
     doctor      = models.CharField(max_length=100)
     datetime = models.DateTimeField(null=True,blank=True)
     # date        = models.DateField(auto_now_add=True)

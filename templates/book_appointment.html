@@ -88,16 +88,48 @@
               
           {% comment %} </div> {% endcomment %}
           <div class="formbold-mb-5">
+            <label for="doctor" class="formbold-form-label"> Doctor </label>
+            <select
+              name = 'doctor'
+              id = 'doctor'
+              type = 'doctor'
+              placeholder="Select doctor"
+              class="formbold-form-input">
+            <option value= "" disabled selected>Select a doctor</option>
+            <option value = "otolaryngologist" > ENT </option>
+            <option value = "General physicam" > GENERAL PHYSICIAN </option>
+            <option value = "NEUROLOGIST" > NEUROLOGIST </option>
+            <option value = "GYNAECOLOGIST / OBSTERTICIAN" > GYNAECOLOGIST / OBSTERTICIAN </option>
+            <option value = "GASTROENTEROLOGIST" > GASTROENTEROLOGIST </option>
+            <option value = "DENTIST" > DENTIST </option>
+            <option value = "Cardiologist" > CARDIOLOGIST </option>
+            <option value = "Psychiatry" > PSYCHIATARY </option>
+            <option value = "Dermatology" > DERMATOLOGY </option>
+            <option value = "Endocrinology" > ENDOCRIONOLOGY </option>
+            <option value = "Radiologist" > RADIOLOGIST </option>
+            <option value = "Urologist" > UROLOGIST </option>
+            <option value = "Endocrinologist" > ENDOCRINOLOGIST </option>
+            <option value = "rheumatologist" > RHEUMATOLOGIST </option>
+            <option value = "vetenary" > VETENARY </option>
+          </select>
+        
+          </div>
+          {% comment %} <div class="formbold-mb-5">
             <label for="email" class="formbold-form-label"> doctor </label>
-            <input
+            <select label = 'doctor'
               type="doctor"
               name="doctor"
               id="doctor"
               placeholder="Enter doctor name"
-              class="formbold-form-input"
+              class="formbold-form-input"> {% endcomment %}
+
+            
               
-            />
-          </div>
+            {% comment %} <select/>
+          </div> {% endcomment %}
+
+
+
           {% comment %} </div> {% endcomment %}
         {% comment %} # temp commented {% endcomment %}
 
