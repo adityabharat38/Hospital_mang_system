@@ -132,11 +132,14 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 
 USE_TZ = True
+
+# manually added by aditya -> 4 april 2023
+USE_L10N = True
 
 
 # Static files (CSS, JavaScript, Images)
