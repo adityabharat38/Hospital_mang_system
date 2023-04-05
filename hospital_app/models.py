@@ -13,8 +13,8 @@ class appointment(models.Model):
     # date        = models.DateField(auto_now_add=True)
     # time        = models.TimeField(null=True,blank=True)
     
-    # def __str__(self):
-    #     return self.name
+    def __str__(self):
+        return self.name
     
 
             # {% comment %} age         = models.CharField(max_length=50)

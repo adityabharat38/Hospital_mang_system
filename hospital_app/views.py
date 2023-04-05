@@ -19,7 +19,7 @@ def doctors(request):
     return HttpResponse("Working on doctors")
 
 def contact_us(request):
-    return HttpResponse("Working on contact page")
+    return render(request,'contact_us.html')
 
 def about_us(request):
     return HttpResponse("Working on about info")
