@@ -16,13 +16,13 @@ def specialties(request):
     return render(request,'specialities.html')
 
 def doctors(request):
-    return HttpResponse("Working on doctors")
+    return render(request,'doctors.html')
 
 def contact_us(request):
     return render(request,'contact_us.html')
 
 def about_us(request):
-    return HttpResponse("Working on about info")
+    return render(request,'about_us.html')
 
 
 
