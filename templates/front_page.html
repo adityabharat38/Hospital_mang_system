@@ -1,60 +1,46 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+{% load static%}
 <!DOCTYPE html>
 <html>
 <head>
   <title> Hospital Management System </title> 
 <style>
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
 
-li {
-  float: left ;
-  border-right:1px solid #bbb;
-}
+  .container {
+    position: fixed;
+    top: 45px; /* Adjust this value to match your navigation bar height */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url('{% static "front_picture.jpg" %}') no-repeat center center fixed; 
+    background-size: cover;
+  }
 
-li:last-child {
-  border-right:1px none;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover:not(.active) {
-  background-color: #111;
-}
-
-.active {
-  background-color: #04AA6D;
-}
-</style>
+  .container img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+  }
+  </style>
+  
 </head>
 <body>
 
-{% load static %}
 
-<ul>
-  <li><a class="active">Home</a></li>
-  <li><a href="specialities">Specialities</a></li>
-  <li><a href="doctors">Doctors</a></li>
-  <li><a href="book_appointment">Book your Appointment</a></li>
-  <li><a href="contact_us">Contact us</a></li>
-  <li style="float:right"><a href="about_us">About us</a></li>
-</ul> 
+<div class="container"> 
 
-<img src="{% static 'health-plus.jpg' %}" alt="front page" width="1527" height="647"> 
+
+
+</div> 
 
 </body>
 </html>
+{% endblock content %}

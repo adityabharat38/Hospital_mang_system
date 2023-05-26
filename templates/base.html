@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Hospital Management System </title> 
+<style>
+  /* Your existing navigation bar styles */
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+  }
+
+  li {
+    float: left;
+    border-right: 1px solid #bbb;
+  }
+
+  li:last-child {
+    border-right: none;
+  }
+
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover:not(.active) {
+    background-color: #111;
+  }
+
+  .active {
+    background-color: #04AA6D;
+  }
+
+  </style>
+  
+</head>
+<body>
+
+{% load static %}
+
+<ul>
+  <li><a class="active">Home</a></li>
+  <li><a href="specialities">Specialities</a></li>
+  <li><a href="doctors">Doctors</a></li>
+  <li><a href="book_appointment">Book your Appointment</a></li>
+  <li><a href="contact_us">Contact us</a></li>
+  <li style="float:right"><a href="about_us">About us</a></li>
+</ul> 
+
+<div class="container"> 
+</div> 
+{% block content %}
+
+{% endblock content %}
+
+</body>
+</html>
